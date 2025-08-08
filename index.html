@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<title>thiswebsitewillselfdestruct.com</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="description" content="This Website Will Self-destruct — A place to write what you're feeling. If no new messages are received for 24 hours, the site will go away.">
+    <meta name="theme-color" content="#222222">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-param" content="authenticity_token">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:creator" content="@FemmeAndroid">
+    <meta property="og:url" content="https://www.thiswebsitewillselfdestruct.com/">
+    <meta property="og:title" content="This Website Will Self Destruct">
+    <meta property="og:description" content="A place to write what you're feeling.  If no new messages are received for 24 hours, the site will go away.">
+    <link rel="stylesheet" media="all" href="selfdestruct_vue-e54e0db4.css"></head>
+  <body>
+<div></div>
+<div id="app"><div id="header" class="full-rotate"><h1>This website will self destruct</h1> <h3>(in 0 seconds)</h3></div> <div id="message" class="note full-rotate border border-primary"><div><p>Hi,</p>
+<p>I'm a website. I'll be gone soon, and that's okay.</p>
+<p>You can send me messages using the form below.  If I go 24 hours
+without receiving a message, I'll permanently self-destruct, and
+everything will be wiped from my database.</p>
+<p>That's okay though.</p>
+<p>Until then, let me know how you're doing. Other people will be able
+to read what you write, but your name or identity won't be attached to
+anything, so feel free to say what's on your mind.</p>
+<p>It's been a rough few months.</p>
+<p>With love,</p>
+<p>ThisWebsiteWillSelfdestruct (dot) com</p>
+<p>P.S. I believe in an internet free from invasive ads and online
+tracking. To that end, this website is supported by donations from
+people like you.  You can help financially support this, and everything I
+ create, via <b><a href="http://ko-fi.com/femmeandroid">Ko-fi</a></b>.  Thank you!</p>
+</div></div> <!----> <div id="message-controls" class="note full-rotate border center"><button onclick="getLetter()" id="get-letter-button">Read a message</button> <button type="button" onclick="unavailable()">💖</button> <button type="button" onclick="unavailable()">Feeling Down?</button> <!----></div> <div id="letter" class="note full-rotate border"><form><textarea id="letter-textarea" rows="" placeholder="" class="textarea">Dear Website,
+
+</textarea> <div class="flex"><button type="button" onclick="unavailable()"  class="right">Send</button></div></form></div> <div id="music player"></div> <div id="share" class="note full-rotate border center"><p>I lived for 3 years, 7 months, 11 days, 15 hours, 54 minutes, and 17 seconds.</p> <p>Please consider sharing  me with friends so I can stay around a little longer.</p> <p>My creator also runs <a href="https://www.listenlater.fm">ListenLater.fm</a>, a read-it-later service for your ears.</p> <p>She accept <a href="https://ko-fi.com/bitshard">tips</a> to help with hosting costs.</p> <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.thiswebsitewillselfdestruct.com" class="paper-btn share-btn facebook">
+            Facebook
+        </a> <a href="https://reddit.com/submit?url=https://www.thiswebsitewillselfdestruct.com&amp;title=This%20Website%20Will%20Selfdestruct" class="paper-btn share-btn reddit">
+            Reddit
+        </a> <a href="https://www.linkedin.com/shareArticle?url=https://www.thiswebsitewillselfdestruct.com&amp;title=This%20Website%20Will%20Selfdestruct&amp;summary=If%20nobody%20sends%20messages%20to%20this%20site%20within%2024%20hours,%20it%20will%20go%20away.&amp;source=http://threads.net/@_bitshard" class="paper-btn share-btn linkedin">
+            LinkedIn
+        </a> <a href="mailto:?subject=This%20Website%20Will%20Selfdestruct&amp;body=Check%20out%20ThisWebsiteWillSelfdestruct.com.%20%20If%20nobody%20sends%20a%20message,%20it%20will%20go%20away." class="paper-btn share-btn email">
+            Email
+        </a></div> <div id="footer" class="note full-rotate border center"><p>A site by <a rel="me" href="http://threads.net/@_bitshard">@_bitshard</a>· <a onclick="unavailable()" href="javascript:">Report letter</a></p> <p><a onclick="unavailable()" href="javascript:">Privacy Policy</a> · <a onclick="unavailable()" href="javascript:">Terms of Service</a></p></div></div>
+<script>
+  function unavailable() { alert("unavailable"); }
+  function getLetter() {
+    const getButton = document.getElementById("get-letter-button");
+    const messageElem = document.getElementById("message");
+    getButton.setAttribute("disabled", "");
+    (async()=>{
+      const res = await fetch("/api/get_letter");
+      const letter = await res.json();
+      /** @type {string} */
+      const body = letter.body;
+      messageElem.innerHTML = body.replace(/\r\n/g, "\n")
+        .split("\n")
+        .map((a) => a
+          .replace(/\&lt;/g, "<")
+          .replace(/\&gt;/g, ">")
+          .replace(/\&/g, "&amp;")
+          .replace(/\</g, "&lt;")
+          .replace(/\>/g, "&gt;"))
+        .map((a) => {
+          if (a.startsWith("-")) return `<ul><li>${a.slice(1).trimStart()}</li></ul>`;
+          else return a;
+        })
+        .map((a) => `<p>${a.trim()}</p>`)
+        .join("");
+    })().finally(() => {
+      getButton.removeAttribute("disabled");
+    })
+  }
+</script>
+</body></html>
+<!--
+     FILE ARCHIVED ON 21:34:33 Nov 07, 2023 AND RETRIEVED FROM THE
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
