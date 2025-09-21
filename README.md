@@ -2,6 +2,8 @@
 
 Simple Bun web server for hosting a time capsule of ThisWebsiteWillSelfDestruct after its shutdown.
 
+![demo](demo.webp)
+
 To use this project, you must have an SQLite database with a table called `letters`. This table will contain the letters that will be shown randomly.
 
 ```sql
