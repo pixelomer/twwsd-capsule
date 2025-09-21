@@ -1,4 +1,4 @@
-# twwsd_capsule
+# twwsd-capsule
 
 Simple Bun web server for hosting a time capsule of ThisWebsiteWillSelfDestruct after its shutdown.
 
