@@ -1,6 +1,6 @@
 {
   "name": "twwsd-capsule",
-  "private": true,
+  "license": "UNLICENSED",
   "devDependencies": {
     "@types/bun": "latest"
   },
